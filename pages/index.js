@@ -29,9 +29,7 @@ class Home extends Component{
             <div >
                 <h1>Hallo with Next.js</h1>
                     <Input change={(event) => this.changeListener(event) } />
-                    <Output output={''}>
-                    {marked(this.state.input)}
-                    </Output>
+                    <Output />
                     <style jsx>{`
                         div {
                             width: 800px;
