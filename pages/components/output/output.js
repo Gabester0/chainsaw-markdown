@@ -3,9 +3,7 @@ function output(props){
 
     return (
         <div id='preview'>
-          <div id="content">
             {props.output}
-          </div>
             <style jsx>{`
                 width: 800px;
                 height: 300px;

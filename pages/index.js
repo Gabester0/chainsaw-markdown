@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import marked from 'marked';
 
 import Input from './components/input/input';
 import Output from './components/output/output';
@@ -14,14 +15,6 @@ class Home extends Component{
         script.src = 'https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js';
         script.async = true;
         document.body.appendChild(script);
-        
-        const scriptMarked = document.createElement("script");
-        scriptMarked.src = "https://cdn.jsdelivr.net/npm/marked/marked.min.js";
-        scriptMarked.async = true;
-        document.body.appendChild(scriptMarked);
-
-        document.getElementById('content').innerHTML = marked('# Marked in browser\n\nRendered by **marked**.');
-
     }
 
     changeListener(event) {
@@ -30,20 +23,15 @@ class Home extends Component{
         })
     }
 
-
-   // submitTextHandler(){
-   //     console.log(state.input)
-   // }
-
     render() {
 
-        let output = this.state.input;
         return (
             <div >
                 <h1>Hallo with Next.js</h1>
                     <Input change={(event) => this.changeListener(event) } />
-                    {/*<button onClick={this.submitTextHandler} >Add to </button>*/}
-                    <Output output={output} />
+                    <Output output={''}>
+                    {marked(this.state.input)}
+                    </Output>
                     <style jsx>{`
                         div {
                             width: 800px;
