@@ -4,10 +4,49 @@ import marked from 'marked';
 import Input from './components/input/input';
 import Output from './components/output/output';
 
+
+marked.setOptions({
+    breaks: true,
+    sanitize: true,
+    tables: true
+});
+  
+
 class Home extends Component{
-    
     state = {
-        input: ''
+        input: `
+        \r # Why React?
+        \r ## I certainly didn\'t need it
+        \r ### for my 2-component 1-page program
+        
+        \r ### I just like React
+        
+        \r I *wanted* to use it **obviously!**
+        \r ___
+
+        \r \` body { background-color: white; } \`
+        
+        \r [links](https://gabester.tech)
+        
+        \r > Does this spark joy?
+
+        \r tictictic | tactactac | tictictic | tactactac
+        \r --------- | --------- | --------- | ---------
+        \r toetoetoe | tictictic | toetoetoe | tactactac
+
+        \r 1. I am
+        \r - a
+        \r - list
+
+        \r ![React Logo w/ Text](https://goo.gl/Umyytc)
+
+        \r \`\`\`
+        \r //I am a
+        \r //multi-line
+        \r //code block
+        \r <div></div>
+        \r \`\`\`
+        `
     };
 
     componentDidMount(){
@@ -23,17 +62,23 @@ class Home extends Component{
         })
     }
 
+    getMarkdown = () =>{
+        const markdown = marked(this.state.input, {sanitize: true});
+        return {__html: markdown};
+    }
+
     render() {
 
         return (
             <div >
-                <h1>Hallo with Next.js</h1>
+                <h1>Hallo with Next.js and Marked.js</h1>
                     <Input change={(event) => this.changeListener(event) } />
-                    <Output />
+                    <Output setMarkdown={this.getMarkdown()} />
                     <style jsx>{`
                         div {
                             width: 800px;
-                            margin: auto;
+                            margin: 75px auto;
+                            border; 2px solid black;
                             text-align: center;
                         }
                     `}</style>

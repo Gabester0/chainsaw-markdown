@@ -2,14 +2,16 @@ function output(props){
 
 
     return (
-        <div id='preview'>
-            {props.output}
-            <style jsx>{`
-                width: 800px;
-                height: 300px;
-                margin: 50px auto;
-                border: 5px solid black;
-            `}</style>
+        <div>
+            <div id='preview' dangerouslySetInnerHTML={props.setMarkdown}>
+            </div>
+                <style jsx>{`
+                #preview{
+                    width: 800px;
+                    margin: 50px auto;
+                    border: 5px solid black;
+                }
+                `}</style>
         </div>
     )
 }
