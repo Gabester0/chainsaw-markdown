@@ -4,14 +4,6 @@ import marked from 'marked';
 import Input from './components/input/input';
 import Output from './components/output/output';
 
-
-marked.setOptions({
-    breaks: true,
-    sanitize: true,
-    tables: true
-});
-  
-
 class Home extends Component{
     state = {
         input: `
@@ -29,12 +21,14 @@ class Home extends Component{
         \r [links](https://gabester.tech)
         
         \r > Does this spark joy?
+        
+        |   ha      |   hb      |  hc       |   hd      |
+        |---------- | --------- | --------- | ----------|
+        | tictictic | tactactac | tictictic | tactactac |
+        | toetoetoe | tictictic | toetoetoe | tactactac |
 
-        \r tictictic | tactactac | tictictic | tactactac
-        \r --------- | --------- | --------- | ---------
-        \r toetoetoe | tictictic | toetoetoe | tactactac
-
-        \r 1. I am
+        \r 1. I
+        \r 2. am
         \r - a
         \r - list
 
@@ -63,7 +57,7 @@ class Home extends Component{
     }
 
     getMarkdown = () =>{
-        const markdown = marked(this.state.input, {sanitize: true});
+        const markdown = marked(this.state.input, {sanitize: true, tables: true, breaks: true});
         return {__html: markdown};
     }
 
@@ -73,13 +67,22 @@ class Home extends Component{
             <div >
                 <h1>Hallo with Next.js and Marked.js</h1>
                     <Input change={(event) => this.changeListener(event) } />
-                    <Output setMarkdown={this.getMarkdown()} />
+                    <Output className="outputClass" setMarkdown={this.getMarkdown()} />
                     <style jsx>{`
                         div {
                             width: 800px;
                             margin: 75px auto;
                             border; 2px solid black;
                             text-align: center;
+                        }
+                        #preview table {
+                            border-collapse: collapse;
+                        }
+                        #preview td,
+                        #preview th {
+                            border: 2px solid gray;
+                            padding-left: 5px;
+                            padding-right: 5px;
                         }
                     `}</style>
             </div>

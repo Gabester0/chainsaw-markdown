@@ -1,5 +1,4 @@
-function output(props){
-
+const output = (props) => {
 
     return (
         <div>
@@ -11,10 +10,18 @@ function output(props){
                     margin: 50px auto;
                     border: 5px solid black;
                 }
+                #preview {
+                    border-collapse: collapse;
+                }
+                th,
+                td {
+                    border: 2px solid gray;
+                    padding-left: 5px;
+                    padding-right: 5px;
+                }
                 `}</style>
         </div>
     )
 }
-
 
 export default output;

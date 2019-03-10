@@ -18,11 +18,13 @@ function input(props){
 
         \r > Does this spark joy?
 
-        \r tictictic | tactactac | tictictic | tactactac
-        \r --------- | --------- | --------- | ---------
-        \r toetoetoe | tictictic | toetoetoe | tactactac
+        |   ha      |   hb      |  hc       |   hd      |
+        |---------- | --------- | --------- | ----------|
+        | tictictic | tactactac | tictictic | tactactac |
+        | toetoetoe | tictictic | toetoetoe | tactactac |
 
-        \r 1. I am
+        \r 1. I
+        \r 2. am
         \r - a
         \r - list
 
@@ -49,10 +51,6 @@ function input(props){
                         width: 800px;
                         height: 200px;
                         margin: auto;
-                    }
-                    ol,
-                    ul {
-                        text-align: center;
                     }
                 `}
             </style>
