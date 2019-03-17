@@ -2,41 +2,39 @@ import marked from 'marked';
 
 function input(props){
 
-    const htmlValue = `
-        \r # Why React?
-        \r ## I certainly didn\'t need it
-        \r ### for my 2-component 1-page program
-    
-        \r ### I just like React
+    const htmlValue = `# Why React?\r
+## I certainly didn\'t need it\r
+### for my 2-component 1-page program\r
 
-        \r I *wanted* to use it **obviously!**
-        \r ___
+### I just like React\r
 
-        \r \` body { background-color: white; } \`
+I *wanted* to use it **obviously!**\r
+___\r
 
-        \r [links](https://gabester.tech)
+\` body { background-color: white; } \`\r
 
-        \r > Does this spark joy?
+[links](https://gabester.tech)\r
 
-        |   ha      |   hb      |  hc       |   hd      |
-        |---------- | --------- | --------- | ----------|
-        | tictictic | tactactac | tictictic | tactactac |
-        | toetoetoe | tictictic | toetoetoe | tactactac |
+> Does this spark joy?\r
 
-        \r 1. I
-        \r 2. am
-        \r - a
-        \r - list
+|   ha      |   hb      |  hc       |   hd      |
+|---------- | --------- | --------- | ----------|
+| tictictic | tactactac | tictictic | tactactac |
+| toetoetoe | tictictic | toetoetoe | tactactac |
 
-        \r ![React Logo w/ Text](https://goo.gl/Umyytc)
+1. I\r
+2. am\r
+- a\r
+- list\r
 
-        \r \`\`\`
-        \r //I am a
-        \r //multi-line
-        \r //code block
-        \r <div></div>
-        \r \`\`\`
-    `;
+![React Logo w/ Text](https://goo.gl/Umyytc)\r
+
+\`\`\`\r
+//I am a\r
+//multi-line\r
+//code block\r
+<div></div>\r
+\`\`\`\r`;
 
     return (
         <div>

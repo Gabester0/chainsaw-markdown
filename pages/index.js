@@ -6,41 +6,39 @@ import Output from './components/output/output';
 
 class Home extends Component{
     state = {
-        input: `
-        \r # Why React?
-        \r ## I certainly didn\'t need it
-        \r ### for my 2-component 1-page program
-        
-        \r ### I just like React
-        
-        \r I *wanted* to use it **obviously!**
-        \r ___
+        input: `# Why React?\r
+## I certainly didn\'t need it\r
+### for my 2-component 1-page program\r
 
-        \r \` body { background-color: white; } \`
-        
-        \r [links](https://gabester.tech)
-        
-        \r > Does this spark joy?
-        
-        |   ha      |   hb      |  hc       |   hd      |
-        |---------- | --------- | --------- | ----------|
-        | tictictic | tactactac | tictictic | tactactac |
-        | toetoetoe | tictictic | toetoetoe | tactactac |
+### I just like React\r
 
-        \r 1. I
-        \r 2. am
-        \r - a
-        \r - list
+I *wanted* to use it **obviously!**\r
+___\r
 
-        \r ![React Logo w/ Text](https://goo.gl/Umyytc)
+\` body { background-color: white; } \`\r
 
-        \r \`\`\`
-        \r //I am a
-        \r //multi-line
-        \r //code block
-        \r <div></div>
-        \r \`\`\`
-        `
+[links](https://gabester.tech)\r
+
+> Does this spark joy?\r
+
+|   ha      |   hb      |  hc       |   hd      |
+|---------- | --------- | --------- | ----------|
+| tictictic | tactactac | tictictic | tactactac |
+| toetoetoe | tictictic | toetoetoe | tactactac |
+
+1. I\r
+2. am\r
+- a\r
+- list\r
+
+![React Logo w/ Text](https://goo.gl/Umyytc)\r
+
+\`\`\`\r
+//I am a\r
+//multi-line\r
+//code block\r
+<div></div>\r
+\`\`\`\r`
     };
 
     componentDidMount(){
@@ -57,7 +55,7 @@ class Home extends Component{
     }
 
     getMarkdown = () =>{
-        const markdown = marked(this.state.input, {sanitize: true, tables: true, breaks: true});
+        const markdown = marked(this.state.input, {sanitize: true, tables: true, breaks: true}, );
         return {__html: markdown};
     }
 
@@ -67,22 +65,35 @@ class Home extends Component{
             <div >
                 <h1>Hallo with Next.js and Marked.js</h1>
                     <Input change={(event) => this.changeListener(event) } />
-                    <Output className="outputClass" setMarkdown={this.getMarkdown()} />
-                    <style jsx>{`
+                    <Output setMarkdown={this.getMarkdown()} />
+                    <style jsx global>{`
                         div {
                             width: 800px;
                             margin: 75px auto;
-                            border; 2px solid black;
+                            border; 2px solid #343434;
                             text-align: center;
+                            font-size: 16px;
                         }
-                        #preview table {
+                        table {
                             border-collapse: collapse;
+                            margin: auto;
                         }
-                        #preview td,
-                        #preview th {
-                            border: 2px solid gray;
-                            padding-left: 5px;
-                            padding-right: 5px;
+                        td,
+                        th {
+                            border: 4px solid #343434;
+                            padding: 5px;
+                        }
+                        code {
+                            display: inline-block;
+                            background: #343434;
+                            color: white;
+                            line-height:150%;
+                            padding: 10px;
+                        }
+                        ul,
+                        ol {
+                            width: 100px;
+                            margin: 25px auto;
                         }
                     `}</style>
             </div>
