@@ -63,7 +63,8 @@ ___\r
 
         return (
             <div >
-                <h1>Hallo with Next.js and Marked.js</h1>
+                <h1>Markdown Previewer</h1>
+                <h3>Built with Next.js and Marked.js</h3>
                     <Input change={(event) => this.changeListener(event) } />
                     <Output setMarkdown={this.getMarkdown()} />
                     <style jsx global>{`
@@ -73,6 +74,19 @@ ___\r
                             border; 2px solid #343434;
                             text-align: center;
                             font-size: 16px;
+                            font-family: 'Lato';
+                        }
+                        h1 {
+                            font-size: 5em;
+                            font-weight: 100;
+                        }
+                        h2 {
+                            font-size: 4em;
+                            font-weight: 200;
+                        }
+                        h3 {
+                            font-size: 3em;
+                            font-weight: 300;
                         }
                         table {
                             border-collapse: collapse;
