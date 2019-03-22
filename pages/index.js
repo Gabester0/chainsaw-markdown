@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import marked from 'marked';
 
-import Input from './components/input/input';
-import Output from './components/output/output';
+import Input from '../components/input';
+import Output from '../components/output';
 
 class Home extends Component{
     state = {
