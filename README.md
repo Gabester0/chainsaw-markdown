@@ -2,7 +2,7 @@
 Free Code Camp Create a Markdown Previewer project
 
 Built with:
- -Love
- -Next.js
- -[Now](https://zeit.co/now)
+ 1-Love
+ 2-Next.js
+ 3-[Now](https://zeit.co/now)
  
