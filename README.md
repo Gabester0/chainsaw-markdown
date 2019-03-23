@@ -2,7 +2,7 @@
 freeCodeCamp Create a Markdown Previewer project
 
 Built with: \
- -Love \
- -Next.js \
+ -Love :blue_heart \
+ -[Next.js](https://nextjs.org/) \
  -[Now](https://zeit.co/now)
  
