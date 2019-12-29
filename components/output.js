@@ -6,9 +6,11 @@ const output = (props, {cssTest}) => {
             </div>
                 <style jsx>{`
                 #preview{
-                    width: 800px;
+                    width: 750px;
                     margin: 50px auto;
                     border: 5px solid black;
+                    text-align: left;
+                    padding: 25px;
                 }
                 `}</style>
         </div>
