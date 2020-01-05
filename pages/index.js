@@ -1,168 +1,30 @@
 import React, { Component } from 'react';
 import marked from 'marked';
 
-import Input from '../components/input';
 import Output from '../components/output';
+import markdown from '../components/markdown';
 /*
-Change this to have a select statement to choose which Element you want a demo of
-When I select one this resets the input and the output
-
-in input.js need to assign value with props.  Then can define value in index.js
-
-Just create an event listener for the dropdown that will set state and input.js props value.  
-
 Give "Markdown" in page header a tooltip with a brief explanation of what markdown is.  
 */
 class Home extends Component{
     state = {
-        input: `
-**INPUT:**
-&#x23; Single Hash at start of line creates H1
-**OUTPUT:**
-# Single Hash at start of line creates H1
-        # One hashtag = H1\r
-
-## Two hashtags = H2\r
-
-### Three hashtags = H3\r
-
-#### Four hashtags = H4\r
-
-##### Five hashtags = H5\r
-
-###### Six hashtags = H6\r
-
-
-
-
-Wrap text in asterisks = *Italicized Text*\r
-
-Wrap text in double asterisks = **Bold Text**\r
-
-
-
-
-Three underscores or asterisks or dashes = \<hr\> (horizontal line)\r
-*Note: the three underscores or asterisks or dashes must be the only characters on the line for this to work*
-
-___
-***
----
-
-
-
-
-Wrap text in backticks = \` Text color and background color are switched \`\r
-
-Wrap text in square brackets followed by url wrapped in parentheses = [[link] (url)](https://en.wikipedia.org/wiki/Hyperlink)\r
-*Note: Don't put any space between the square brackets and the parentheses*\r
-
-> Start line with one \> character = Indented blockquote
-
-> > Start line with two \> characters = Double indented blockquote
-
-
----
-
-
-
-1. Start each line with a number + a period + a space + Your text= Numbered List
-3. Number + Period = &#50;. Your text
-4. (&#52;.) You can use any number you want
-4. (&#52;.) Markdown will still show the next number
-10. (&#49;&#48;.) Markdown will still show the next sequential number
-
-- Start each line with a dash plus a space = Bulleted list
-- Start each line with a dash plus a space = Bulleted list
-- Start each line with a dash plus a space = Bulleted list
-- Start each line with a dash plus a space = Bulleted list
-
-
-
----
-
-
-
-**INPUT:**
-
-&#96; &#96; &#96; 
-var code = function(){
-> alert( "Wrap you code in a pair of triple \r backticks to create a multi-line code block" ); \r
-> //To indent lines of code use tabs
-
-};
-
-code();
-&#96; &#96; &#96;
-
-**OUTPUT:**
-
-\`\`\` 
-var code = function(){
-    alert( "Wrap you code in a pair of triple 
-    backticks to create a multi-line code block" );
-    //To indent lines of code use tabs
-};
-
-code();
-\`\`\`
-
-
-
----
-
-
-
-**INPUT:**
-
-&#33;&#91; Description of the image &#93;&#40; the image URL &#41;
-
-**OUTPUT:**
-
-![React Logo w/ Text](https://goo.gl/Umyytc)
-
-
-
----
-
-
-
-**INPUT:**
-
-&#124; To Create &#124; A Table: &#124; Wrap Text &#124; In Pipe (or vertical slash) symbols &#124;
-&#124; - &#124;- &#124; - &#124; - &#124;
-&#124; On the 2nd line &#124; Type Pipe + Dash &#124; Once For Every &#124; Table Cell in the Row &#124;
-&#124; For Every &#124; Row &#124;  Wrap Text &#124; In Pipes &#124;
-&#124; If There Are Less Cells &#124; The Table Will Automatically &#124; Fill In Blank Cells &#124;
-
-**OUTPUT:**
-
-| To Create | A Table: | Wrap Text | In Pipe (or vertical slash) symbols |
-|- | - | -| -|
-| On the 2nd line | Type Pipe + Dash | Once For Every | Table Cell in the Row |
-| For Every | Row |  Wrap Text | In Pipes |
-| If There Are Less Cells | The Table Will Automatically | Fill In Blank Cells |
-
-
-
-
-`};
+        key: `Markdown`,
+        input: `Markdown is a markup language that uses regular characters to style and format a document.  It is often used in documents such as .readme files to make them more visually appealing.\r\rTo see different examples of markdown effects you can use the dropdown menu to select which example you wish to see.  You can change the text in the input field to preview your own text and explore all the different combinations of effects you can achieve with markdown.\r\r*To read more about the history of markup languages and where the name comes from click [here](https://en.wikipedia.org/wiki/Markup_language).*`
+    };
 
     componentDidMount(){
-        const script = document.createElement("script");
-        script.src = 'https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js';
-        script.async = true;
-        document.body.appendChild(script);
         //Remove space from url demonstration
-        const link = document.querySelector("a").textContent;
-        const editedLink = link.split("").filter(e=> e!= " ").join("");
-        document.querySelector("a").textContent = editedLink;
+        if( document.querySelector("a") ){
+            const link = document.querySelector("a").textContent;
+            const editedLink = link.split("").filter(e=> e!= " ").join("");
+            document.querySelector("a").textContent = editedLink;
+        }
     }
 
     changeListener(event) {
         this.setState({
-            input: event.target.value
-        })
+            input: event
+        });
     }
 
     getMarkdown = () =>{
@@ -170,18 +32,68 @@ code();
         return {__html: markdown};
     }
 
+    handleSelect = (e)=>{
+        const key = e.target.value
+        const newInput = markdown[key];
+        this.setState({
+            key: key,
+            input: newInput
+        });
+        this.setState({input: newInput});
+     };
+    
     render() {
-
+    
+        const items = [];
+        const keys = Object.keys(markdown);
+        keys.forEach(key=> {
+            const newKey = key.split("_").join(" ");
+            items.push(<option key={markdown[key]}>{newKey}</option>) 
+        });
+        
         return (
             <div >
                 <h1>Markdown Previewer</h1>
-                    <Input change={(event) => this.changeListener(event) } />
+                    <div className="flexRow">
+                        <h4><strong>INPUT:</strong></h4>
+                        <select 
+                        id="select"
+                        onChange={e=> this.handleSelect(e)}>
+                            {items}
+                        </select>
+                    </div>
+                    <textarea
+                        id="editor"
+                        value={this.state.input}
+                        onChange={e=> this.changeListener(e.target.value)}
+                    />
+
                     <Output setMarkdown={this.getMarkdown()} />
                     <style jsx global>{`
+                        .flexRow {
+                            width: 822px;
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: start;
+                            margin: 0 auto 12px auto;
+                        }
+                        .flexRow > h4 {
+                            text-align: left;
+                            display: inline;
+                            margin: 4px 10px 4px 0;
+                        }
+                        .flexRow > select {
+                            width: 100%;
+                        }
+                        textarea {
+                            width: 800px;
+                            height: 200px;
+                            margin: auto;
+                            padding: 10px;
+                        }
                         div {
                             width: 800px;
-                            margin: 75px auto;
-                            border; 2px solid #343434;
+                            margin: 0 auto;
                             text-align: center;
                             font-size: 16px;
                             font-family: 'Lato';
@@ -207,7 +119,7 @@ code();
                             padding: 5px;
                         }
                         code {
-                            width: 95%;
+                            width: auto;
                             display: inline-block;
                             background: #343434;
                             color: white;
