@@ -11,7 +11,7 @@ const output = (props, {cssTest}) => {
                     margin: 16px 0 16px 0;
                 }
                 #preview{
-                    width: 750px;
+                    width: 762px;
                     margin: 0 auto 50px auto;
                     border: 5px solid black;
                     text-align: left;
