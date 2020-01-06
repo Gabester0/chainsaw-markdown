@@ -8,8 +8,8 @@ Give "Markdown" in page header a tooltip with a brief explanation of what markdo
 */
 class Home extends Component{
     state = {
-        key: `Markdown`,
-        input: `Markdown is a markup language that uses regular characters to style and format a document.  It is often used in documents such as .readme files to make them more visually appealing.\r\rTo see different examples of markdown effects you can use the dropdown menu to select which example you wish to see.  You can change the text in the input field to preview your own text and explore all the different combinations of effects you can achieve with markdown.\r\r*To read more about the history of markup languages and where the name comes from click [here](https://en.wikipedia.org/wiki/Markup_language).*`
+        key: "Markdown",
+        input: "Markdown is a markup language that uses regular characters to style and format a document.  It is often used in documents such as .readme files to make them more visually appealing.\r\rTo see different examples of markdown effects you can use the dropdown menu to select which example you wish to see.  You can change the text in the input field to preview your own text and explore all the different combinations of effects you can achieve with markdown.\r\r*To read more about the history of markup languages and where the name comes from click [here](https://en.wikipedia.org/wiki/Markup_language).*"
     };
 
     componentDidMount(){
@@ -47,8 +47,7 @@ class Home extends Component{
         const items = [];
         const keys = Object.keys(markdown);
         keys.forEach(key=> {
-            const newKey = key.split("_").join(" ");
-            items.push(<option key={markdown[key]}>{newKey}</option>) 
+            items.push(<option key={markdown[key]}>{key}</option>) 
         });
         
         return (
