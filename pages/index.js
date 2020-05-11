@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import marked from 'marked';
+import DOMPurify from 'dompurify';
 
 import Output from '../components/output';
 import markdown from '../components/markdown';
@@ -35,11 +36,12 @@ class Home extends Component{
     handleSelect = (e)=>{
         const key = e.target.value
         const newInput = markdown[key];
+        const cleanInput = DOMPurify.sanitize(newInput);
         this.setState({
             key: key,
             input: newInput
         });
-        this.setState({input: newInput});
+        this.setState({input: cleanInput});
      };
     
     render() {
