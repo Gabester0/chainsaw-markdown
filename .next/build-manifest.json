@@ -1,33 +1,33 @@
 {
   "devFiles": [],
   "lowPriorityFiles": [
-    "static/npSnpIoxWOr9VJIajFatl/_buildManifest.js",
-    "static/npSnpIoxWOr9VJIajFatl/_ssgManifest.js"
+    "static/l64ifAOrwPRnz_0NbgRiI/_buildManifest.js",
+    "static/l64ifAOrwPRnz_0NbgRiI/_ssgManifest.js"
   ],
   "pages": {
     "/": [
-      "static/runtime/webpack-b65cab0b00afd201cbda.js",
-      "static/chunks/framework.453c137eaba7464af687.js",
-      "static/runtime/main-d44d18a6181f80b7effa.js"
+      "static/runtime/webpack-c212667a5f965e81e004.js",
+      "static/chunks/framework.3f1fe56bf6bef70e5e1a.js",
+      "static/runtime/main-6a0a73f763c445ca4abc.js"
     ],
     "/_app": [
-      "static/runtime/webpack-b65cab0b00afd201cbda.js",
-      "static/chunks/framework.453c137eaba7464af687.js",
-      "static/chunks/4cff1a13a7c1daae25e5ab39e370637e0b749b69.d6b5063a339264f8cb6a.js",
-      "static/runtime/main-d44d18a6181f80b7effa.js"
+      "static/runtime/webpack-c212667a5f965e81e004.js",
+      "static/chunks/framework.3f1fe56bf6bef70e5e1a.js",
+      "static/chunks/4574e0a016ce46d33f229d37b2abc3f047a36cd7.c964d93927c0dd8d7b97.js",
+      "static/runtime/main-6a0a73f763c445ca4abc.js"
     ],
     "/_error": [
-      "static/runtime/webpack-b65cab0b00afd201cbda.js",
-      "static/chunks/framework.453c137eaba7464af687.js",
-      "static/runtime/main-d44d18a6181f80b7effa.js"
+      "static/runtime/webpack-c212667a5f965e81e004.js",
+      "static/chunks/framework.3f1fe56bf6bef70e5e1a.js",
+      "static/runtime/main-6a0a73f763c445ca4abc.js"
     ],
     "/_polyfills": [
-      "static/runtime/polyfills-516a1fdae57f705e03d1.js"
+      "static/runtime/polyfills-283772482f0035efccb9.js"
     ],
     "/index": [
-      "static/runtime/webpack-b65cab0b00afd201cbda.js",
-      "static/chunks/framework.453c137eaba7464af687.js",
-      "static/runtime/main-d44d18a6181f80b7effa.js"
+      "static/runtime/webpack-c212667a5f965e81e004.js",
+      "static/chunks/framework.3f1fe56bf6bef70e5e1a.js",
+      "static/runtime/main-6a0a73f763c445ca4abc.js"
     ]
   }
 }
