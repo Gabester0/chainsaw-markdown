@@ -4,9 +4,7 @@ import DOMPurify from 'dompurify';
 
 import Output from '../components/output';
 import markdown from '../components/markdown';
-/*
-Give "Markdown" in page header a tooltip with a brief explanation of what markdown is.  
-*/
+
 class Home extends Component{
     state = {
         key: "Markdown",
@@ -49,7 +47,8 @@ class Home extends Component{
         const items = [];
         const keys = Object.keys(markdown);
         keys.forEach(key=> {
-            items.push(<option key={markdown[key]}>{key}</option>) 
+            const withoutUnderscore = key.replace(/_/g, " ")
+            items.push(<option key={markdown[key]}>{withoutUnderscore}</option>) 
         });
         
         return (
