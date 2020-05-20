@@ -47,8 +47,7 @@ class Home extends Component{
         const items = [];
         const keys = Object.keys(markdown);
         keys.forEach(key=> {
-            const withoutUnderscore = key.replace(/_/g, " ")
-            items.push(<option key={markdown[key]}>{withoutUnderscore}</option>) 
+            items.push(<option key={markdown[key]}>{key}</option>) 
         });
         
         return (
