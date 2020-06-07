@@ -1,5 +1,7 @@
 # [chainsaw-markdown](https://chainsaw-markdown-git-master.gceipper.now.sh/)
-freeCodeCamp Create a Markdown Previewer project
+## Markdown Editor and Guide
+
+Interactive markdown guide and editor
 
 Built with: \
  -Love :blue_heart: \
