@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import marked from 'marked';
 import DOMPurify from 'dompurify';
+import Head from 'next/head';
 
 import Output from '../components/output';
 import markdown from '../components/markdown';
@@ -51,95 +52,104 @@ class Home extends Component{
         });
         
         return (
-            <div >
-                <h1>Markdown Previewer</h1>
-                    <div className="flexRow">
-                        <h4><strong>INPUT:</strong></h4>
-                        <select 
-                        id="select"
-                        onChange={e=> this.handleSelect(e)}>
-                            {items}
-                        </select>
-                    </div>
-                    <textarea
-                        id="editor"
-                        value={this.state.input}
-                        onChange={e=> this.changeListener(e.target.value)}
-                    />
+            <React.Fragment>
+                <Head>
+                    <title>Markdown Previewer</title>
+                    <meta property="og:title" content="Markdown Previewer" />
+                    <meta property="og:type" content="website" />
+                    <meta property="og:url" content="https://chainsaw-markdown-git-master.gceipper.now.sh/" />
+                    <meta property="og:image" content="../static/markdownPreviewer.jpg" />
+                </Head>
+                <main>
+                    <h1>Markdown Previewer</h1>
+                        <div className="flexRow">
+                            <h4><strong>INPUT:</strong></h4>
+                            <select 
+                            id="select"
+                            onChange={e=> this.handleSelect(e)}>
+                                {items}
+                            </select>
+                        </div>
+                        <textarea
+                            id="editor"
+                            value={this.state.input}
+                            onChange={e=> this.changeListener(e.target.value)}
+                            />
 
-                    <Output setMarkdown={this.getMarkdown()} />
-                    <style jsx global>{`
-                        .flexRow {
-                            width: 822px;
-                            display: flex;
-                            flex-direction: row;
-                            justify-content: start;
-                            margin: 0 auto 12px auto;
-                        }
-                        .flexRow > h4 {
-                            text-align: left;
-                            display: inline;
-                            margin: 4px 10px 4px 0;
-                        }
-                        .flexRow > select {
-                            width: 100%;
-                        }
-                        textarea {
-                            width: 800px;
-                            height: 200px;
-                            margin: auto;
-                            padding: 10px;
-                        }
-                        div {
-                            width: 800px;
-                            margin: 0 auto;
-                            text-align: center;
-                            font-size: 16px;
-                            font-family: 'Lato';
-                        }
-                        h1 {
-                            font-size: 5em;
-                            font-weight: 100;
-                        }
-                        h2 {
-                            font-size: 4em;
-                            font-weight: 200;
-                        }
-                        h3 {
-                            font-size: 3em;
-                            font-weight: 300;
-                        }
-                        table {
-                            border-collapse: collapse;
-                        }
-                        td,
-                        th {
-                            border: 4px solid #343434;
-                            padding: 5px;
-                        }
-                        code {
-                            width: auto;
-                            display: inline-block;
-                            background: #343434;
-                            color: white;
-                            line-height:150%;
-                            padding: 10px;
-                        }
-                        hr {
-                            width: 97%;
-                            margin-left: 0!important;
-                        }
-                        ul,
-                        ol {
-                            width: 95%;
-                            margin: 25px 0;
-                        }
-                        p > img {
-                            width: 200px;
-                            height: auto;
-                        }
-                    `}</style>
-            </div>
+                        <Output setMarkdown={this.getMarkdown()} />
+                        <style jsx global>{`
+                            .flexRow {
+                                width: 822px;
+                                display: flex;
+                                flex-direction: row;
+                                justify-content: start;
+                                margin: 0 auto 12px auto;
+                            }
+                            .flexRow > h4 {
+                                text-align: left;
+                                display: inline;
+                                margin: 4px 10px 4px 0;
+                            }
+                            .flexRow > select {
+                                width: 100%;
+                            }
+                            textarea {
+                                width: 800px;
+                                height: 200px;
+                                margin: auto;
+                                padding: 10px;
+                            }
+                            div {
+                                width: 800px;
+                                margin: 0 auto;
+                                text-align: center;
+                                font-size: 16px;
+                                font-family: 'Lato';
+                            }
+                            h1 {
+                                font-size: 5em;
+                                font-weight: 100;
+                            }
+                            h2 {
+                                font-size: 4em;
+                                font-weight: 200;
+                            }
+                            h3 {
+                                font-size: 3em;
+                                font-weight: 300;
+                            }
+                            table {
+                                border-collapse: collapse;
+                            }
+                            td,
+                            th {
+                                border: 4px solid #343434;
+                                padding: 5px;
+                            }
+                            code {
+                                width: auto;
+                                display: inline-block;
+                                background: #343434;
+                                color: white;
+                                line-height:150%;
+                                padding: 10px;
+                            }
+                            hr {
+                                width: 97%;
+                                margin-left: 0!important;
+                            }
+                            ul,
+                            ol {
+                                width: 95%;
+                                margin: 25px 0;
+                            }
+                            p > img {
+                                width: 200px;
+                                height: auto;
+                            }
+                            `}</style>
+                </main>
+        </React.Fragment>
         );
     }
 }
