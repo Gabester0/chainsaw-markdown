@@ -5,6 +5,7 @@ Interactive markdown guide and editor
 
 Built with: \
  -Love :blue_heart: \
+ -[React.js](https://reactjs.org/) \
  -[Next.js](https://nextjs.org/) \
- -[Now](https://zeit.co/now)
+ -[Marked.js](https://marked.js.org/)
  
