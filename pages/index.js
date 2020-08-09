@@ -56,9 +56,15 @@ class Home extends Component{
                 <Head>
                     <title>Markdown Previewer</title>
                     <meta property="og:title" content="Markdown Previewer" />
+                    <meta property="og:description" content="Markdown Previewer and guide. Built with React, NextJS, and MarkedJS" />
                     <meta property="og:type" content="website" />
                     <meta property="og:url" content="https://chainsaw-markdown-git-master.gceipper.now.sh/" />
-                    <meta property="og:image" content="../static/markdownPreviewer.jpg" />
+                    <meta property="og:image" content="https://i.imgur.com/Sp0pUJc.jpg" />
+                    <meta property="twitter:card" content="Markdown Previewer" />
+                    <meta property="twitter:description" content="Markdown Previewer and guide. Built with React, NextJS, and MarkedJS" />
+                    <meta property="twitter:creator" content="@javaGabe" />
+                    <meta property="twitter:image" content="https://i.imgur.com/Sp0pUJc.jpg" />
+                    <meta property="twitter:image:alt" content="Markdown Previewer Image" />
                 </Head>
                 <main>
                     <h1>Markdown Previewer</h1>
