@@ -1,7 +1,7 @@
 {
   "name": "buildamarkdownpreviewer",
   "version": "1.0.0",
-  "description": "",
+  "description": "Markdown Previewer and Guide",
   "main": "index.js",
   "scripts": {
     "dev": "next",
@@ -12,11 +12,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "cross-env": "^5.2.0",
-    "dompurify": "^2.0.11",
-    "marked": "^0.6.1",
-    "next": "^9.4.1",
-    "react": "^16.8.2",
-    "react-dom": "^16.8.2"
+    "cross-env": "^5.2.1",
+    "dompurify": "^2.0.12",
+    "marked": "^0.6.3",
+    "next": "^9.5.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
   }
 }
