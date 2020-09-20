@@ -9,3 +9,4 @@ Built with: \
  -[Next.js](https://nextjs.org/) \
  -[Marked.js](https://marked.js.org/)
  
+https://www.markdownguide.org/extended-syntax/
