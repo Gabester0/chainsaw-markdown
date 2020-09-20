@@ -28,7 +28,8 @@ class Home extends Component{
     }
 
     getMarkdown = () =>{
-        const markdown = marked(this.state.input, {sanitize: true, tables: true, breaks: true}, );
+        const sanitized = DOMPurify.sanitize(this.state.input);
+        const markdown = marked(sanitized, {tables: true, breaks: true}, );
         return {__html: markdown};
     }
 
